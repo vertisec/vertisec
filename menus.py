@@ -37,5 +37,5 @@ def supportedProtocol():
     print("16) Timed version of Andrew Protocol")
     print("17) Timed version of Lowe's modification of Andrew Protocol")
     print("18) Timed version of Lowe's modification of Wide Mouthed Frog Protocol")
-    print("19) MobInfoDec")
+    print("19) MobInfoSec")
     print()

@@ -434,3 +434,28 @@ Versions of attack:
 2) Man in The Middle 2 - communication between Intruder (impersonates B) and A
 
 
+------------------------------------------------------
+
+
+MobInfoSec
+
+References:
+Siedlecka-Lamch O., Kurkowski M., El Fray I., Pejas J., Verification of Mutual Authentication Protocol for MobInfoSec System, in Proceedings of 14th International Conference CISIM 2015, Warsaw, Poland, Lecture Notes in Computer Science vol. 9339, 461-474, 2015
+
+
+1. SP.A -> MU.A: Tsp.a, SP.A
+2. MU.A -> MU.B: Tsp.a, SP.A
+3. MU.B -> SP.B: Tsp.a, SP.A
+4. SP.B -> MU.B: {{Tsp.a, -Ksp.a, h(Tsp.b,Tsp.a,SP.A)}-Ksp.b}+Ksp.a
+5. MU.B -> MU.A: {{Tsp.a, -Ksp.a, h(Tsp.b,Tsp.a,SP.A)}-Ksp.b}+Ksp.a
+6. MU.A -> SP.A: {{Tsp.a, -Ksp.a, h(Tsp.b,Tsp.a,SP.A)}-Ksp.b}+Ksp.a
+
+
+Versions of attack:
+1) Man in The Middle 1 - Intruder impersonates SP.A
+2) Man in The Middle 2 - Intruder impersonates MU.A
+3) Man in The Middle 3 - Intruder impersonates SP.B
+4) Man in The Middle 4 - Intruder impersonates MU.B
+
+
+

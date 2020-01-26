@@ -450,8 +450,9 @@ def andrew():
     elif manInTheMiddleVersion == 2:
         print("Man in the Middle 2")
         print("An attack exists if:")
-        print("??")
-        print("??")
+        print("L1 >= 0")
+        print("L2 >= 3 * D3 + 1, for D3 <= D4")
+        print("L2 >= 2 * D3 + D4 + 1, for D3 > D4")
 
 
     D1, D2, D3, D4 = check4Delays()
@@ -479,13 +480,23 @@ def andrewLowe():
     if manInTheMiddleVersion == 1:
         print("Man in the Middle 1")
         print("An attack exists if:")
-        print("??")
-        print("??")
+        print("For D2 <= D3:")
+        print("L1 >= D2 + D3 + 1")
+        print("L2 >= D2 + D3 + 1")
+        print()
+        print("For D2 > D3:")
+        print("L1 >= 2 * D2 + 1")
+        print("L2 >= D2 + D3 + 1")
     elif manInTheMiddleVersion == 2:
         print("Man in the Middle 2")
         print("An attack exists if:")
-        print("??")
-        print("??")
+        print("For D2 <= D3:")
+        print("L1 >= D2 + D3 + 1")
+        print("L2 >= D2 + D3 + 1")
+        print()
+        print("For D2 > D3:")
+        print("L1 >= D2 + D3 + 1")
+        print("L2 >= 2 * D2 + 1")
 
     D1, D2, D3 = check3Delays()
     L1, L2 = check2Lifetimes()
