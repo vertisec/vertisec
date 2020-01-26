@@ -532,7 +532,13 @@ def wmftLowe():
 
 def mobinfosec():
     os.system('clear')
-    print("MobInfoSec")
+    print("Alice-Bob notation of MobInfoSec")
+    print("1. SP.A\t->\tMU.A\t:\tTsp.a, SP.A")
+    print("2. MU.A\t->\tMU.B\t:\tTsp.a, SP.A")
+    print("3. MU.B\t->\tSP.B\t:\tTsp.a, SP.A")
+    print("4. SP.B\t->\tMU.B\t:\t{{Tsp.a, -Ksp.a, h(Tsp.b,Tsp.a,SP.A)}-Ksp.b}+Ksp.a")
+    print("5. MU.B\t->\tMU.A\t:\t{{Tsp.a, -Ksp.a, h(Tsp.b,Tsp.a,SP.A)}-Ksp.b}+Ksp.a")
+    print("6. MU.A\t->\tSP.A\t:\t{{Tsp.a, -Ksp.a, h(Tsp.b,Tsp.a,SP.A)}-Ksp.b}+Ksp.a")
     print()
     print("Versions of an attack")
     print("1) Man in the Middle 1")
