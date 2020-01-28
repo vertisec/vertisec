@@ -243,7 +243,7 @@ def verify3D2L(protocol, version, D1, D2, D3, L1, L2,  maxK):
             lowe3D2L("nspkt", version, D1, D2, D3, L1, L2, maxK)
     elif protocol == 8:
         if version == 1 or version == 2:
-            manInTheMiddle3D2L("nspktLowe", version, D1, D2, D3, L1, L2, maxK)
+            manInTheMiddle3D2L("nspkLowe", version, D1, D2, D3, L1, L2, maxK)
     elif protocol == 12:
         manInTheMiddle3D2L("wooLamPi", version, D1, D2, D3, L1, L2, maxK)
     elif protocol == 13:
@@ -278,7 +278,7 @@ def verify4D2L(protocol, version, D1, D2, D3, D4, L1, L2, maxK):
     elif protocol == 9:
         manInTheMiddle4D2L("yahalomLowe", version, D1, D2, D3, D4, L1, L2, maxK)
     elif protocol == 10:
-        manInTheMiddle2D2L("yahalomPaulson", version, D1, D2, D3, D4, L1, L2, maxK)
+        manInTheMiddle4D2L("yahalomPaulson", version, D1, D2, D3, D4, L1, L2, maxK)
     elif protocol == 16:
         manInTheMiddle4D2L("andrew", version, D1, D2, D3, D4, L1, L2, maxK)
 
@@ -292,6 +292,8 @@ def verify5D2L(protocol, version, D1, D2, D3, D4, D5, L1, L2, maxK):
 def verify6D2L(protocol, version, D1, D2, D3, D4, D5, D6, L1, L2, maxK):
     if protocol == 4:
         manInTheMiddle6D2L("kaochow1", version, D1, D2, D3, D4, D5, D6, L1, L2, maxK)
+    if protocol == 5:
+        manInTheMiddle6D2L("cskip", version, D1, D2, D3, D4, D5, D6, L1, L2, maxK)
 
 
 def afterVerification(nameWithoutNta, k):
