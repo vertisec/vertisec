@@ -505,7 +505,7 @@ def andrewLowe():
     print("Press ENTER to verify")
     input()
     os.system('clear')
-    return manInTheMiddleVersion, D1, D2, L1, L2
+    return manInTheMiddleVersion, D1, D2, D3, L1, L2
 
 
 def wmftLowe():
