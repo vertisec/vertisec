@@ -84,6 +84,7 @@ def attackVersion(prot):
         #done
         manInTheMiddleVersion, D1, D2, D3, D4, D5, L1, L2 = yahalom()
         print("Timed version of Yahalom Protocol")
+        print("Be aware that there is no execution where attack is possible")
         print("Version of the attack: Man in the Middle " + str(manInTheMiddleVersion))
         print5D2L(D1, D2, D3, D4, D5, L1, L2)
         print()
@@ -106,6 +107,7 @@ def attackVersion(prot):
     elif prot == 9:
         #done
         manInTheMiddleVersion, D1, D2, D3, D4, L1, L2 = yahalomLowe()
+        print("Be aware that there is no execution where attack is possible")
         print("Timed version of Lowe's modification of Yahalom Protocol")
         print("Version of the attack: Man in the Middle " + str(manInTheMiddleVersion))
         print4D2L(D1, D2, D3, D4, L1, L2)
@@ -118,6 +120,7 @@ def attackVersion(prot):
         #done
         manInTheMiddleVersion, D1, D2, D3, D4, L1, L2 = yahalomPaulson()
         print("Timed version of Paulson's modification of Yahalom Protocol")
+        print("Be aware that there is no execution where attack is possible")
         print("Version of the attack: Man in the Middle " + str(manInTheMiddleVersion))
         print4D2L(D1, D2, D3, D4, L1, L2)
         #print("Maximum k = ??")
@@ -131,6 +134,7 @@ def attackVersion(prot):
         #done
         manInTheMiddleVersion, D1, D2, D3, D4, D5, L1, L2 = yahalomBAN()
         print("Timed version of BAN simplified version of Yahalom Protocol")
+        print("Be aware that there is no execution where attack is possible")
         print("Version of the attack: Man in the Middle " + str(manInTheMiddleVersion))
         print5D2L(D1, D2, D3, D4, D5, L1, L2)
         print()
@@ -209,15 +213,15 @@ def attackVersion(prot):
         verify3D2L(prot, manInTheMiddleVersion, D1, D2, D3, L1, L2, maxK)
 
     elif prot == 18:
-        manInTheMiddleVersion, D1, D2, L1, L2, L3 = wmftLowe()
+        manInTheMiddleVersion, D1, D2, D3, L1, L2, L3 = wmftLowe()
         print("Timed version of Lowe's modification of Wide Mouthed Frog Protocol")
         print("Version of the attack: Man in the Middle " + str(manInTheMiddleVersion))
-        print2D3L(D1, D2, L1, L2, L3)
+        print2D3L(D1, D2, D3, L1, L2)
         print("Maximum k = ??")
         print()
         maxK = 100
         print("Generating input files")
-        verify2D3L(prot, manInTheMiddleVersion, D1, D2, L1, L2, L3, maxK)
+        verify3D3L(prot, manInTheMiddleVersion, D1, D2, D3, L1, L2, L3, maxK)
 
     elif prot == 19:
         manInTheMiddleVersion, D1, D2, D3, L1, L2, L3, L4 = mobinfosec()
@@ -256,16 +260,19 @@ def verify3D2L(protocol, version, D1, D2, D3, L1, L2,  maxK):
         manInTheMiddle3D2L("andrewLowe", version, D1, D2, D3, L1, L2, maxK)
 
 
+
 def verify3D4L(protocol, version, D1, D2, D3, L1, L2, L3, L4, maxK):
     if protocol == 19:
         manInTheMiddle3D4L("mobinfosec", version, D1, D2, D3, L1, L2, L3, L4, maxK)
+
+def verify3D3L(protocol, version, D1, D2, D3, L1, L2, L3, maxK):
+    if protocol == 18:
+        manInTheMiddle3D3L("wmftLowe", version, D1, D2, D3, L1, L2, L3, maxK)
 
 
 def verify2D3L(protocol, version, D1, D2, L1, L2, L3, maxK):
     if protocol == 2:
         manInTheMiddle2D3L("wmft", version, D1, D2, L1, L2, L3, maxK)
-    if protocol == 18:
-        manInTheMiddle2D3L("wmftLowe", version, D1, D2, L1, L2, L3, maxK)
 
 def verify4D1L(protocol, version, D1, D2, D3, D4, L1, maxK):
     if protocol == 3:
@@ -496,6 +503,23 @@ def manInTheMiddle3D4L(protName, version, D1, D2, D3, L1, L2, L3, L4, maxK):
     afterVerification(nameWithoutNta, k)
 
 
+
+def manInTheMiddle3D3L(protName, version, D1, D2, D3, L1, L2, L3, maxK):
+    if version == 1:
+        name = PROT + "/" + protName + "/Man1/" + protName + "_Man1"
+        directory = PROT + "/" + protName +"/Man1/"
+        efo = directory + protName + "_Man1"
+    if version == 2:
+        name = PROT + "/" + protName + "/Man2/" + protName + "_Man2"
+        directory = PROT + "/" + protName +"/Man2/"
+        efo = directory + protName + "_Man2"
+
+    cmd = generateNet3D3Lcommand(name, D1, D2, D3, L1, L2, L3)
+    print(cmd)
+    executeCommandGenerateNtaFile(cmd, directory)
+    nameWithoutNta = generateNameWithoutNta3D3L(name, D1, D2, D3, L1, L2, L3)
+    k = bmcAlg(nameWithoutNta, BIN, efo, maxK)
+    afterVerification(nameWithoutNta, k)
 
 
 def print2D1L(D1, D2, L1):

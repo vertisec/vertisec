@@ -516,19 +516,20 @@ def wmftLowe():
     print("3. B\t->\tA\t:\t{Tb}Kab")
     print("2. A\t->\tB\t:\t{Tb}Kab")
     print()
+    print("An attack does not exist")
     print("Versions of an attack")
     print("1) Man in the Middle 1")
     print("2) Man in the Middle 2")
     manInTheMiddleVersion = checkInts(1, 2)
 
-    D1, D2 = check2Delays()
+    D1, D2, D3 = check3Delays()
     L1, L2, L3 = check3Lifetimes()
 
     print("All the parameters have been chosen!")
     print("Press ENTER to verify")
     input()
     os.system('clear')
-    return manInTheMiddleVersion, D1, D2, L1, L2, L3
+    return manInTheMiddleVersion, D1, D2, D3, L1, L2, L3
 
 def mobinfosec():
     os.system('clear')
